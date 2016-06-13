@@ -5,7 +5,9 @@ var Funnel   = require('broccoli-funnel');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    babel: {
+      includePolyfill: true
+    }
   });
 
   app.import('bower_components/highlightjs/styles/solarized-dark.css')

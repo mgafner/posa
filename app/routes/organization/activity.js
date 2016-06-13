@@ -2,8 +2,22 @@ import RSVP from 'rsvp'
 import Route from 'ember-route'
 import injectService from 'ember-service/inject'
 
+import {
+  task,
+  timeout
+} from 'ember-concurrency'
+
+const QUARTER_HOUR = 1000 * 60 * 15
+
 export default Route.extend({
   github: injectService(),
+
+  refreshTask: task(function* () {
+    while (true) {
+      yield timeout(QUARTER_HOUR)
+      this.refresh()
+    }
+  }).on('activate'),
 
   model() {
     let organization = this.modelFor('organization')
