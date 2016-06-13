@@ -11,6 +11,7 @@ const QUARTER_HOUR = 1000 * 60 * 15
 
 export default Route.extend({
   github: injectService(),
+  perPage: 50,
 
   refreshTask: task(function* () {
     while (true) {
@@ -29,7 +30,7 @@ export default Route.extend({
             .map(member => member.get('login'))
             .map(login =>
               this.get('github').request(`/users/${login}/events/public`, {
-                data: { 'per_page': 20 }
+                data: { 'per_page': this.perPage }
               })
             )
         )
@@ -48,7 +49,7 @@ export default Route.extend({
           feed.sort((a, b) => b.created_at - a.created_at)
         )
         .then(feed =>
-          feed.slice(0, 20)
+          feed.slice(0, this.perPage)
         )
       )
   }
