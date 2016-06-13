@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'gh-org-stream',
+    modulePrefix: 'posa',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
