@@ -71,6 +71,10 @@ main {
 }
 
 @media (min-width: 1024px) {
+  body {
+    background-attachment: fixed;
+  }
+
   .page-header, main {
     max-width: 45rem;
   }
