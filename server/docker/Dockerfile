@@ -10,6 +10,7 @@ RUN mix local.hex --force && \
 
 WORKDIR /usr/src/app
 ENV MIX_ENV prod
+ENV HOME /usr/src/app
 
 RUN mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phoenix_new-$PHOENIX_VERSION.ez
 COPY mix.* /usr/src/app/
