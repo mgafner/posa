@@ -2,6 +2,9 @@ FROM elixir:1.3
 
 ENV PHOENIX_VERSION 1.2.0
 
+RUN useradd -md /usr/src/app posa
+USER posa
+
 RUN mix local.hex --force && \
     mix local.rebar --force
 
