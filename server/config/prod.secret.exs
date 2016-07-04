@@ -1,0 +1,15 @@
+use Mix.Config
+
+# In this file, we keep production configuration that
+# you likely want to automate and keep it away from
+# your version control system.
+config :posa, Posa.Endpoint,
+  url: System.get_env("SECRET_KEY_BASE"),
+
+# Configure your database
+config :posa, Posa.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("DATABASE_USER"),
+  password: System.get_env("DATABASE_PASS"),
+  database: System.get_env("DATABASE_NAME"),
+  pool_size: 20
