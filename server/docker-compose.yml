@@ -21,6 +21,9 @@ services:
       - PORT=4000
       - MIX_ENV=dev
       - SECRET_KEY_BASE=
-      - DATABASE_URL=postgresql://db:5432/posa
+      - DATABASE_PASS=posa
+      - DATABASE_USER=postgres
+      - DATABASE_NAME=postgres
+      - DATABASE_HOST=db
     depends_on:
       - db

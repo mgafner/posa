@@ -12,4 +12,5 @@ config :posa, Posa.Repo,
   username: System.get_env("DATABASE_USER"),
   password: System.get_env("DATABASE_PASS"),
   database: System.get_env("DATABASE_NAME"),
+  hostname: System.get_env("DATABASE_HOST")
   pool_size: 20
