@@ -14,5 +14,6 @@ RUN mix deps.get --only prod
 RUN mix deps.compile --only prod
 COPY . /usr/src/app/
 RUN mix compile
+RUN mix compile.protocols
 
-CMD mix ecto.migrate && mix phoenix.server
+CMD mix ecto.migrate && elixir -pa _build/prod/consolidated -S mix phoenix.server
