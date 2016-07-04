@@ -23,7 +23,7 @@ services:
       - SECRET_KEY_BASE=
       - DATABASE_PASS=posa
       - DATABASE_USER=postgres
-      - DATABASE_NAME=postgres
+      - DATABASE_NAME=posa
       - DATABASE_HOST=db
     depends_on:
       - db
